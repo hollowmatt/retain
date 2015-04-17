@@ -29,6 +29,13 @@ $(function(){
             return model.getAllNotes();
         },
 
+        saveNotes: function() {
+            var url = 'data:text/json;charset=utf8,' + encodeURIComponent(JSON.stringify(model.getAllNotes()));
+            console.log(url);
+            window.open(url, '_blank');
+            window.focus();
+        },
+
         init: function() {
             model.init();
             view.init();
@@ -45,6 +52,10 @@ $(function(){
                 octopus.addNewNote(newNoteContent.val());
                 newNoteContent.val('');
                 e.preventDefault();
+            });
+            var saveNoteForm = $('#save-note-form');
+            saveNoteForm.submit(function(e){
+                octopus.saveNotes();
             });
             view.render();
         },

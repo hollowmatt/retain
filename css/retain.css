@@ -5,10 +5,15 @@
 .new-note-form {
     margin-bottom: 15px;
 }
+
 .new-note-content {
     width:100%;
     display: block;
     font-size: 1.3em;
+}
+
+.save-note-form {
+    margin-top: 15px;
 }
 
 .notes {
